@@ -1,0 +1,44 @@
+###
+GET http://localhost:9000/CARRITO HTTP/1.1
+
+###
+DELETE http://localhost:9000/USER/4 HTTP/1.1
+
+###
+POST http://localhost:9000/USER HTTP/1.1
+Content-Type: application/json
+
+{
+        "EMAIL": "asad@gmail.com",
+        "USER_PWD": "asd",
+        "USER_FULL_NAME": "asd",
+        "PIC": "",
+        "TEL": "",
+        "TIPO": "",
+        "CALLE": "",
+        "NUMERO": null,
+        "COLONIA": "",
+        "MUNICIPIO": "",
+        "ESTADO": "",
+        "FK_ID_USER": 3,
+        "TOKEN": null
+}
+
+###
+PUT http://localhost:9000/USER/43 HTTP/1.1
+Content-Type: application/json
+
+{
+        "USER_FULL_NAME": "Francisco",
+        "PIC": "",
+        "TEL": 8888888888,
+        "TIPO": "",
+        "CALLE": "",
+        "NUMERO": null,
+        "COLONIA": "",
+        "MUNICIPIO": "",
+        "ESTADO": "",
+        "FK_ID_USER": 3,
+        "TOKEN": null
+
+}
