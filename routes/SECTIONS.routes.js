@@ -5,7 +5,7 @@ const routesS = express.Router();
 routesS.get('/',(req, res)=>{
     req.getConnection((err, conn)=>{
         if(err) return res.send(err)
-        conn.query('SELECT * FROM SECTIONS', (err, rows)=>{
+        conn.query('SELECT * FROM sections', (err, rows)=>{
             if(err) return res.send(err)
             res.json(rows)
         })
@@ -15,7 +15,7 @@ routesS.get('/',(req, res)=>{
 routesS.get('/:id',(req, res)=>{
     req.getConnection((err, conn)=>{
         if(err) return res.send(err)
-        conn.query('SELECT * FROM SECTIONS WHERE SECTION_ID = ?', [req.params.id], (err, rows)=>{
+        conn.query('SELECT * FROM sections WHERE SECTION_ID = ?', [req.params.id], (err, rows)=>{
             if(err) return res.send(err)
             res.json(rows)
         })
@@ -25,7 +25,7 @@ routesS.get('/:id',(req, res)=>{
 routesS.post('/', (req, res)=>{
     req.getConnection((err, conn)=>{
         if(err) return res.send(err)
-        conn.query('INSERT INTO SECTIONS set ?', [req.body], (err, rows)=>{
+        conn.query('INSERT INTO sections set ?', [req.body], (err, rows)=>{
             if(err) return res.send(err)
 
             res.send('se agrego el producto!')
@@ -36,7 +36,7 @@ routesS.post('/', (req, res)=>{
 routesS.delete('/:id', (req, res)=>{
     req.getConnection((err, conn)=>{
         if(err) return res.send(err)
-        conn.query('DELETE FROM SECTIONS WHERE SECTION_ID = ?', [req.params.id], (err, rows)=>{
+        conn.query('DELETE FROM sections WHERE SECTION_ID = ?', [req.params.id], (err, rows)=>{
             if(err) return res.send(err)
 
             res.send('Se elimino el producto')
@@ -47,7 +47,7 @@ routesS.delete('/:id', (req, res)=>{
 routesS.put('/:id', (req, res)=>{
     req.getConnection((err, conn)=>{
         if(err) return res.send(err)
-        conn.query('UPDATE SECTIONS set ? WHERE SECTION_ID = ?', [req.body, req.params.id], (err, rows)=>{
+        conn.query('UPDATE sections set ? WHERE SECTION_ID = ?', [req.body, req.params.id], (err, rows)=>{
             if(err) return res.send(err)
 
             res.send('el producto se actualizo!') 
