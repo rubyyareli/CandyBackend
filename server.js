@@ -33,12 +33,12 @@ app.get('/',(req, res)=>{
     res.send('Bienvenido oiga')
 })
 
-app.use('/USER_TYPE', routes)
+app.use('/user_type', routes)
 app.use('/user', routesU)
-app.use('/SECTION', routesS)
-app.use('/CARD', routesC)
-app.use('/PRODUCT', routesP)
-app.use('/CARRITO', routesCA)
+app.use('/section', routesS)
+app.use('/card', routesC)
+app.use('/product', routesP)
+app.use('/carrito', routesCA)
 
 /////////////////////////////////////////////////////////////////////////////////
 app.get('/test', (req,res) => {
