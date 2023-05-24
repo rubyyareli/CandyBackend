@@ -34,7 +34,7 @@ app.get('/',(req, res)=>{
 })
 
 app.use('/USER_TYPE', routes)
-app.use('/USER', routesU)
+app.use('/user', routesU)
 app.use('/SECTION', routesS)
 app.use('/CARD', routesC)
 app.use('/PRODUCT', routesP)
