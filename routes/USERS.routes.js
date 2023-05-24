@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 routesU.get('/',(req, res)=>{
     req.getConnection((err, conn)=>{
         if(err) return res.send(err)
-        conn.query('SELECT * FROM USERS', (err, rows)=>{
+        conn.query('SELECT * FROM users', (err, rows)=>{
             if(err) return res.send(err)
             res.json(rows)
         })
@@ -16,7 +16,7 @@ routesU.get('/',(req, res)=>{
 routesU.get('/:id',(req, res)=>{
     req.getConnection((err, conn)=>{
         if(err) return res.send(err)
-        conn.query('SELECT * FROM USERS WHERE USER_ID = ?', [req.params.id], (err, rows)=>{
+        conn.query('SELECT * FROM users WHERE USER_ID = ?', [req.params.id], (err, rows)=>{
             if(err) return res.send(err)
             res.json(rows)
         })
@@ -26,7 +26,7 @@ routesU.get('/:id',(req, res)=>{
 routesU.get('/:email/correo',(req, res)=>{
     req.getConnection((err, conn)=>{
         if(err) return res.send(err)
-        conn.query('SELECT * FROM USERS WHERE EMAIL = ?', [req.params.email], (err, rows)=>{
+        conn.query('SELECT * FROM users WHERE EMAIL = ?', [req.params.email], (err, rows)=>{
             if(err) 
             {
                 //res.status(400).send({msg : 'Error'});
@@ -47,7 +47,7 @@ routesU.post('/', (req, res)=>
     req.getConnection((err, conn)=>
     {
         if(err) return res.send(err)
-        conn.query('INSERT INTO USERS set ?', [req.body], (err, rows)=>
+        conn.query('INSERT INTO users set ?', [req.body], (err, rows)=>
         {
             if(err) return res.send(err)
 
@@ -61,7 +61,7 @@ routesU.post('/', (req, res)=>
 routesU.delete('/:id', (req, res)=>{
     req.getConnection((err, conn)=>{
         if(err) return res.send(err)
-        conn.query('DELETE FROM USERS WHERE USER_ID = ?', [req.params.id], (err, rows)=>{
+        conn.query('DELETE FROM users WHERE USER_ID = ?', [req.params.id], (err, rows)=>{
             if(err) return res.send(err)
 
             res.send('Se elimino el usuario')
@@ -72,7 +72,7 @@ routesU.delete('/:id', (req, res)=>{
 routesU.put('/:id', (req, res)=>{
     req.getConnection((err, conn)=>{
         if(err) return res.send(err)
-        conn.query('UPDATE USERS set ? WHERE USER_ID = ?', [req.body, req.params.id], (err, rows)=>{
+        conn.query('UPDATE users set ? WHERE USER_ID = ?', [req.body, req.params.id], (err, rows)=>{
             if(err) return res.send(err)
 
             res.send('el usuario se actualizo!')
