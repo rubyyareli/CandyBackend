@@ -16,11 +16,11 @@ const app = express();
 app.set('port', process.env.PORT || 9000);
 
 const dbOptions = {
-    host: 'localhost',
+    host: 'srv1026.hstgr.io',
     port: 3306,
-    user: 'root',
-    password: '5rduZ2BT',
-    database: 'bd_is'
+    user: 'u337397135_rubyyareli',
+    password: ';NYZNKYw7',
+    database: 'u337397135_chococandy'
 }
 
 //*****\\middlewares//*****\\
