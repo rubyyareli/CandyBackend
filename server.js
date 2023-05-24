@@ -16,11 +16,11 @@ const app = express();
 app.set('port', process.env.PORT || 9000);
 
 const dbOptions = {
-    host: 'srv1026.hstgr.io',
-    port: 3306,
-    user: 'u337397135_rubyyareli',
-    password: ';NYZNKYw7',
-    database: 'u337397135_chococandy'
+    host: 'containers-us-west-96.railway.app',
+    port: 5551,
+    user: 'root',
+    password: 'fLJquorFLE6Y9GpUVzoR',
+    database: 'railway'
 }
 
 //*****\\middlewares//*****\\
